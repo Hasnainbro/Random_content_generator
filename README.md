@@ -1,6 +1,4 @@
-# Random_content_generator
-"Flask-powered web app that generates random quotes, jokes, and more. Choose a category, click a button, and get inspired!
-# Random Content Generator
+## Random Content Generator
 
 The "Random Content Generator" is a simple web application built with Flask and HTML/CSS that allows users to access and generate random content in various categories, including inspirational quotes, jokes, and more.
 
