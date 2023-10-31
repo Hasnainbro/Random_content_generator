@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Random Content Generator</h1>
+    <select id="categorySelect">
+        {% for category in category_names %}
+            <option>{{ category }}</option>
+        {% endfor %}
+    </select>
+    <button id="generateButton">Generate Content</button>
+    <div id="contentDisplay"></div>
+
+    <script>
+        document.getElementById('generateButton').addEventListener('click', () => {
+            const selectedCategory = document.getElementById('categorySelect').value;
+            fetch(`/get_content/${selectedCategory}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('contentDisplay').textContent = data.content;
+                });
+        });
+    </script>
+</body>
+</html>
